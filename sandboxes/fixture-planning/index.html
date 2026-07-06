@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Total Sports Platform Fixture Planning Sandbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Version 2 model proof</p>
+      <h1>Fixture Planning Sandbox</h1>
+      <p class="intro">
+        Static seed data that renders the approved Domain Model for DIBV, CVIBV and TEIS fixture planning.
+      </p>
+    </div>
+    <div class="status-card">
+      <span class="status-label">Purpose</span>
+      <strong>Model validation only</strong>
+      <span>No live Spawtz, database, authentication or fixture generation.</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="review-panel" aria-labelledby="review-heading">
+      <div>
+        <h2 id="review-heading">Reviewer Questions</h2>
+        <p>
+          Use the venue tabs to check whether the same object model can represent doubleheaders,
+          single round-robin fixtures and mixed-sport scheduling without hard-coded venue logic.
+        </p>
+      </div>
+      <ul class="question-list">
+        <li>Are venue rules expressed as configuration or fixture rules?</li>
+        <li>Are external mappings separate from internal business objects?</li>
+        <li>Is staff review visible before final approval?</li>
+      </ul>
+    </section>
+
+    <nav class="scenario-tabs" aria-label="Fixture scenarios">
+      <button class="tab is-active" type="button" data-scenario="dibv">DIBV Doubleheader</button>
+      <button class="tab" type="button" data-scenario="cvibv">CVIBV Round Robin</button>
+      <button class="tab" type="button" data-scenario="teis">TEIS Mixed Sport</button>
+    </nav>
+
+    <section id="scenario-root" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>
+      Sandbox source: approved Domain Model, Legacy Platform Assimilation and Fixture Planning Slice.
+    </p>
+  </footer>
+
+  <script src="sandbox.js"></script>
+</body>
+</html>

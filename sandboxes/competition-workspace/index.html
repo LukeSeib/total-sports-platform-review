@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Total Sports Platform Competition Workspace Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Interactive prototype</p>
+      <h1>Competition Workspace</h1>
+      <p class="intro">A static sandbox for testing day-to-day competition management decisions across DIBV, CVIBV and TEIS.</p>
+    </div>
+    <aside class="prototype-note">
+      <strong>Dummy data only</strong>
+      <span>No live Spawtz, database, payments or production authentication.</span>
+    </aside>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Workspace selectors">
+      <label>
+        Venue
+        <select id="venueSelect"></select>
+      </label>
+      <label>
+        Operational day/night
+        <select id="daySelect"></select>
+      </label>
+      <button id="resetButton" type="button">Reset Scenario</button>
+    </section>
+
+    <section class="readiness" aria-live="polite">
+      <div>
+        <p class="eyebrow">Fixture Readiness</p>
+        <h2 id="readinessTitle">Review required</h2>
+        <p id="readinessSummary"></p>
+      </div>
+      <div class="readiness-metrics">
+        <span><strong id="activeCount">0</strong> active</span>
+        <span><strong id="warningCount">0</strong> warnings</span>
+        <span><strong id="reviewedCount">0</strong> reviewed</span>
+      </div>
+      <div id="publishBadge" class="publish-badge">Cannot publish yet</div>
+    </section>
+
+    <section class="workspace-grid">
+      <article class="panel panel-wide">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Competition Workspace</p>
+            <h2 id="workspaceTitle"></h2>
+          </div>
+          <span id="staffStatus" class="status-chip"></span>
+        </div>
+        <div id="competitionCards" class="card-grid"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Venue Configuration</p>
+            <h2>Rules in use</h2>
+          </div>
+        </div>
+        <div id="ruleList" class="stack-list"></div>
+      </article>
+
+      <article class="panel panel-wide">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Team Entries</p>
+            <h2>Availability, payment and preferences</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Team Entry</th>
+                <th>Competition</th>
+                <th>Status</th>
+                <th>Available</th>
+                <th>Payment Block</th>
+                <th>Time Preference</th>
+                <th>Clashes</th>
+              </tr>
+            </thead>
+            <tbody id="teamRows"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Clash Request</p>
+            <h2>Add or remove</h2>
+          </div>
+        </div>
+        <div class="clash-builder">
+          <select id="clashTeamA"></select>
+          <select id="clashTeamB"></select>
+          <button id="addClashButton" type="button">Add Clash</button>
+        </div>
+        <div id="clashList" class="stack-list"></div>
+      </article>
+
+      <article class="panel panel-wide">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Fixture Plan</p>
+            <h2>Matches, allocations and review state</h2>
+          </div>
+          <span id="fixturePlanStatus" class="status-chip"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time Slot</th>
+                <th>Court Allocation</th>
+                <th>Competition</th>
+                <th>Match</th>
+                <th>Special Usage</th>
+                <th>Reviewed</th>
+              </tr>
+            </thead>
+            <tbody id="matchRows"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Human Review</p>
+            <h2>What still needs attention</h2>
+          </div>
+        </div>
+        <div id="warningList" class="stack-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype boundary: static HTML, CSS and JavaScript. Built to test the approved Domain Model, not to replace the current fixture tool.</p>
+  </footer>
+
+  <script src="workspace.js"></script>
+</body>
+</html>

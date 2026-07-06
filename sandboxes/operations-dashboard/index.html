@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Total Sports Platform Operations Dashboard Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Venue command centre</p>
+      <h1>Operations Dashboard</h1>
+      <p class="intro">A static prototype focused on one daily question: what needs attention right now?</p>
+    </div>
+    <aside class="prototype-note">
+      <strong>Working prototype</strong>
+      <span>Dummy data only. No Spawtz, payments, real customer data or production authentication.</span>
+    </aside>
+  </header>
+
+  <main>
+    <section class="control-bar" aria-label="Dashboard selectors">
+      <label>
+        Venue
+        <select id="venueSelect"></select>
+      </label>
+      <label>
+        Day / Night
+        <select id="daySelect"></select>
+      </label>
+      <button id="resetButton" type="button">Reset Dashboard</button>
+    </section>
+
+    <section class="headline" aria-live="polite">
+      <div>
+        <p class="eyebrow">Right now</p>
+        <h2 id="headlineTitle">Loading</h2>
+        <p id="headlineSummary"></p>
+      </div>
+      <div class="status-stack">
+        <span id="readinessBadge" class="badge blocked">Needs review</span>
+        <span id="attentionCount" class="badge">0 active items</span>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="zone zone-wide">
+        <div class="zone-header">
+          <div>
+            <p class="eyebrow">Zone 1</p>
+            <h2>Right Now</h2>
+          </div>
+          <span id="fixtureReadiness" class="badge"></span>
+        </div>
+        <div id="rightNowGrid" class="metric-grid"></div>
+        <div id="alertList" class="item-list"></div>
+      </article>
+
+      <article class="zone">
+        <div class="zone-header">
+          <div>
+            <p class="eyebrow">Zone 2</p>
+            <h2>Trends</h2>
+          </div>
+        </div>
+        <div id="trendList" class="trend-list"></div>
+      </article>
+
+      <article class="zone zone-wide">
+        <div class="zone-header">
+          <div>
+            <p class="eyebrow">Zone 3</p>
+            <h2>Decisions Waiting</h2>
+          </div>
+          <span class="badge">Humans decide</span>
+        </div>
+        <div id="decisionList" class="decision-list"></div>
+      </article>
+
+      <article class="zone">
+        <div class="zone-header">
+          <div>
+            <p class="eyebrow">Zone 4</p>
+            <h2>Quick Pathways</h2>
+          </div>
+        </div>
+        <div id="pathwayList" class="pathway-grid"></div>
+        <div id="pathwayDetail" class="placeholder-panel">
+          <strong>Select a pathway</strong>
+          <p>Prototype panels show what will live in each future area.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype boundary: static HTML, CSS and JavaScript. The dashboard surfaces operational attention; it does not automate final decisions.</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
