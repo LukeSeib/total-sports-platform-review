@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff Module | Total Sports Platform Review</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <a href="../../">Review Home</a>
+    <h1>Staff Module</h1>
+    <p>Staff access, venue-scoped permissions, activity logs and decision/review actions from Version 1.</p>
+  </header>
+  <main>
+    <a class="back-link" href="../../">Back to review home</a>
+
+    <section class="grid">
+      <article class="card"><h2>Access model</h2><span class="metric">Venue scoped</span><p>Global admin or selected venue access.</p></article>
+      <article class="card"><h2>Review actions</h2><span class="metric">Human</span><p>Staff approve fixture plans, warnings, FAQs and leads.</p></article>
+      <article class="card"><h2>Audit</h2><span class="metric">Logged</span><p>Important actions are tracked for who did what and when.</p></article>
+    </section>
+
+    <section class="section">
+      <h2>V1 Features Represented</h2>
+      <table>
+        <thead><tr><th>Feature</th><th>Original V1 Location</th><th>Business Purpose</th><th>Migration</th></tr></thead>
+        <tbody>
+          <tr><td>Staff accounts</td><td>models.py `Staff`, templates/staff.html</td><td>Give authorised staff access to the operational platform.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Venue-scoped access</td><td>models.py `staff_venue_access`, staff routes</td><td>Let one person access all venues and another access only one.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Roles and permissions</td><td>models.py `is_admin`, `all_venues`</td><td>Separate global admin authority from day-to-day venue users.</td><td><span class="pill amber">Represented</span></td></tr>
+          <tr><td>Activity logs</td><td>models.py `ActivityLog`, templates/activity.html</td><td>Track significant operational actions.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Staff decision actions</td><td>fixture, lead, FAQ and dashboard workflows</td><td>Make managers final decision makers.</td><td><span class="pill green">Static prototype</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Dummy Staff Review Queue</h2>
+      <table>
+        <thead><tr><th>Action</th><th>Prepared Information</th><th>Decision</th><th>Audit</th></tr></thead>
+        <tbody>
+          <tr><td>Approve fixture plan</td><td>Warnings, clashes and layout score visible.</td><td>Approve or revise.</td><td>Logged with staff member.</td></tr>
+          <tr><td>Convert enquiry to lead</td><td>Possible duplicate and interest shown.</td><td>Create lead or merge.</td><td>Logged with source enquiry.</td></tr>
+          <tr><td>Edit FAQ</td><td>Current public answer and status visible.</td><td>Publish, hide or delete.</td><td>Logged with change summary.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Parked for Live Version</h2>
+      <ul>
+        <li>Production authentication and password reset.</li>
+        <li>Detailed role and permission policy.</li>
+        <li>Immutable audit trail and reporting.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

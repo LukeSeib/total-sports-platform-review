@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competition Module | Total Sports Platform Review</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <a href="../../">Review Home</a>
+    <h1>Competition Module</h1>
+    <p>League setup, team entries, availability, clash requests, fixture planning, byes, finals, exports and ladders.</p>
+  </header>
+  <main>
+    <a class="back-link" href="../../">Back to review home</a>
+
+    <section class="grid">
+      <article class="card"><h2>Fixture readiness</h2><span class="metric">Review</span><p>Automation prepares a fixture plan; staff approve or adjust.</p></article>
+      <article class="card"><h2>Availability risks</h2><span class="metric">4</span><p>Dummy unavailable, payment-blocked, forfeit and clash warnings.</p></article>
+      <article class="card"><h2>External export</h2><span class="metric">Mapped</span><p>Exports remain separated from internal fixture objects.</p></article>
+    </section>
+
+    <section class="section">
+      <h2>V1 Features Represented</h2>
+      <table>
+        <thead><tr><th>Feature</th><th>Original V1 Location</th><th>Business Rule Preserved</th><th>Migration</th></tr></thead>
+        <tbody>
+          <tr><td>Competitions, grades and divisions</td><td>models.py `Competition`, scraper league sync</td><td>Division names and external IDs must match the source system.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Team entries</td><td>models.py `Team`, templates/teams.html</td><td>Teams can be active, inactive, payment blocked or carrying preferences.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Availability</td><td>models.py `Availability`, templates/availability.html</td><td>Y, N, $, F statuses change fixture eligibility for a week.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Clash requests and time preferences</td><td>models.py `ClashRequest`, team edit routes</td><td>Requests are respected where possible but staff can override.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Fixture generation and layout review</td><td>fixture_engine.py, templates/fixtures.html</td><td>Matchups, breaks, court grouping, court balance and staff review all matter.</td><td><span class="pill amber">Represented</span></td></tr>
+          <tr><td>Finals formats</td><td>app.py finals helpers</td><td>Finals rules differ by venue and competition format.</td><td><span class="pill amber">Represented</span></td></tr>
+          <tr><td>Fixture exports</td><td>app.py XLS/CSV export helpers</td><td>Export naming, court names, divisions and team names must match external systems.</td><td><span class="pill amber">Represented</span></td></tr>
+          <tr><td>Results and ladders</td><td>scraper.py, scoring.py, public leaderboard routes</td><td>Scoring rules vary by venue and sport.</td><td><span class="pill amber">Represented</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Dummy Fixture Plan Review</h2>
+      <table>
+        <thead><tr><th>Time</th><th>Court</th><th>Competition</th><th>Match</th><th>Warnings</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>6:15pm</td><td>Court 1</td><td>DIBV Mixed B</td><td>Team A v Team B</td><td>Clash clear, time request met</td><td><span class="pill green">Ready</span></td></tr>
+          <tr><td>6:45pm</td><td>Court 1</td><td>DIBV Mixed B</td><td>Team B v Team C</td><td>Back-to-back accepted</td><td><span class="pill green">Ready</span></td></tr>
+          <tr><td>7:15pm</td><td>Court 2</td><td>CVIBV Div A</td><td>Team D v House Team</td><td>House team usage needs review</td><td><span class="pill amber">Review</span></td></tr>
+          <tr><td>8:40pm</td><td>Court 3</td><td>TEIS Cricket</td><td>Team E v Team F</td><td>Late time preference breach</td><td><span class="pill red">Decision needed</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Parked for Live Version</h2>
+      <ul>
+        <li>Production fixture generator and optimisation engine.</li>
+        <li>Drag/drop schedule editor with proper slot collision handling.</li>
+        <li>Reliable external import/export, including future published fixtures and results.</li>
+        <li>Player-level availability and clash intelligence.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

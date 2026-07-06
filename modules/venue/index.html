@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venue Module | Total Sports Platform Review</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <a href="../../">Review Home</a>
+    <h1>Venue Module</h1>
+    <p>Venue setup, courts, sport profiles, time slots and centre-specific configuration rules migrated from Version 1.</p>
+  </header>
+  <main>
+    <a class="back-link" href="../../">Back to review home</a>
+
+    <section class="grid">
+      <article class="card"><h2>DIBV</h2><span class="metric">7 courts</span><p>Doubleheader default, pairs court exception, court names mapped to external system naming.</p></article>
+      <article class="card"><h2>Canning Vale</h2><span class="metric">6 courts</span><p>Single round-robin default, 45 minute volleyball slots and house-team handling.</p></article>
+      <article class="card"><h2>TEIS</h2><span class="metric">3 courts</span><p>Mixed sport operation with netball, cricket and soccer timing profiles.</p></article>
+    </section>
+
+    <section class="section">
+      <h2>V1 Features Represented</h2>
+      <table>
+        <thead><tr><th>Feature</th><th>Original V1 Location</th><th>Business Purpose</th><th>Migration</th></tr></thead>
+        <tbody>
+          <tr><td>Venue selection</td><td>app.py `/venue/select`, base navigation</td><td>Keep every workflow scoped to the selected centre.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Court setup and names</td><td>models.py `CourtName`, scraper court sync routes</td><td>Use real court names for exports, sponsor naming and operational clarity.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Sport profiles</td><td>models.py `SportProfile`, sports page</td><td>Support different durations and time slots per sport.</td><td><span class="pill green">Static prototype</span></td></tr>
+          <tr><td>Venue rules</td><td>fixture_engine.py, app.py venue helpers</td><td>Express DIBV, Canning Vale and TEIS differences through configuration.</td><td><span class="pill amber">Represented</span></td></tr>
+          <tr><td>External venue mappings</td><td>scraper.py and export helpers</td><td>Separate internal business objects from external system identifiers.</td><td><span class="pill amber">Represented</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Dummy Configuration Snapshot</h2>
+      <div class="workflow">
+        <div class="step"><h3>Venue</h3><p>Canning Vale Indoor Beach Volleyball</p></div>
+        <div class="step"><h3>Sport Profile</h3><p>Volleyball, 45 minutes, 6:00pm to 9:00pm</p></div>
+        <div class="step"><h3>Court Rule</h3><p>Use courts 1-6, prefer continuous court runs.</p></div>
+        <div class="step"><h3>External Mapping</h3><p>Public exports use external court names, not internal labels.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Parked for Live Version</h2>
+      <ul>
+        <li>Real venue configuration editor with validation.</li>
+        <li>Live external system mapping refresh.</li>
+        <li>Permission-controlled changes to opening hours, court names and sport profiles.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
